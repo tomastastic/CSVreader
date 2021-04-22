@@ -17,14 +17,14 @@ class Main {
         }
       } */
       
-      List<String[]> nextTransaction = reader.readAll();
-
-      for(String[] record : nextTransaction){
-        System.out.println("Date : " + record[0]);
-        System.out.println("Type : " + record[1]);
-        System.out.println("Merchant : " + record[2]);
-        System.out.println("Debit : " + record[3]);
-        System.out.println("Balance : " + record[4]);
+     // List<String[]> nextTransaction = reader.readAll();
+      String[]nextTransaction;
+      while ((nextTransaction = reader.readNext()) != null){
+        System.out.println("Date : " + nextTransaction[0]);
+        System.out.println("Type : " + nextTransaction[1]);
+        System.out.println("Merchant : " + nextTransaction[2]);
+        System.out.println("Debit : " + nextTransaction[3]);
+        System.out.println("Balance : " + nextTransaction[4]);
         System.out.println("---------------------------");
         //Date,Type,Merchant/Description,Debit/Credit,Balance
       }
